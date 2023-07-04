@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hirakana/question_page.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class HomePage extends StatelessWidget {
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.red, // foreground
               ),
-              onPressed: () {},
+              onPressed: startQuiz,
               icon: const Icon(Icons.arrow_right),
               label: const Text('Let\'s Start!'),
             )
